@@ -23,13 +23,6 @@ public:
         Isbin = b.Isbin;
     }
 
-    void getdata() {
-        cout << "Enter the book name: " << endl;
-        cin >> bookname;
-        cout << "Enter the ISBN number: " << endl;
-        cin >> Isbin;
-    }
-
     void display() {
         cout << "The book name is: " << bookname << endl;
         cout << "The book ISBN is: " << Isbin << endl;
@@ -37,12 +30,19 @@ public:
 };
 
 int main() {
-    Book b1;
-    b1.getdata();
+    string name;
+    int isbn;
+
+    cout << "Enter the book name: " << endl;
+    cin >> name;
+    cout << "Enter the ISBN number: " << endl;
+    cin >> isbn;
+
+    Book b1(name, isbn);
     Book b2(b1);
+
     b1.display();
     b2.display();
 
     return 0;
 }
-
